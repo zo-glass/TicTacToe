@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Velour-Light.otf">
+            <string>Velour-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52b-an-wPt" userLabel="Header">
+                                <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="186.66666666666663"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-kb-9hj">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="186.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-eT-Dk6">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="29"/>
+                                                <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="48"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cia-N2-lGM">
+                                                <rect key="frame" x="139.66666666666666" y="71.666666666666657" width="113.66666666666666" height="43.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="72"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ggT-eT-Dk6" secondAttribute="trailing" id="7bO-3f-w8f"/>
+                                            <constraint firstItem="ggT-eT-Dk6" firstAttribute="top" secondItem="IwZ-kb-9hj" secondAttribute="top" id="B6b-le-Xn4"/>
+                                            <constraint firstItem="ggT-eT-Dk6" firstAttribute="leading" secondItem="IwZ-kb-9hj" secondAttribute="leading" id="FaA-bt-wQg"/>
+                                            <constraint firstItem="cia-N2-lGM" firstAttribute="centerY" secondItem="IwZ-kb-9hj" secondAttribute="centerY" id="Z0W-9H-OxD"/>
+                                            <constraint firstItem="cia-N2-lGM" firstAttribute="centerX" secondItem="IwZ-kb-9hj" secondAttribute="centerX" id="aiq-qQ-91D"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="IwZ-kb-9hj" secondAttribute="bottom" id="5Bn-pB-g2z"/>
+                                    <constraint firstItem="IwZ-kb-9hj" firstAttribute="leading" secondItem="52b-an-wPt" secondAttribute="leading" id="Hh7-W3-e8E"/>
+                                    <constraint firstAttribute="trailing" secondItem="IwZ-kb-9hj" secondAttribute="trailing" id="O32-kv-K5G"/>
+                                    <constraint firstItem="IwZ-kb-9hj" firstAttribute="top" secondItem="52b-an-wPt" secondAttribute="top" id="Q2s-qF-Kt2"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pf2-6l-BEJ" userLabel="Grid">
+                                <rect key="frame" x="16" y="245.66666666666663" width="361" height="361"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hMs-ef-OpC">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="119.66666666666667"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-JD-eDk">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P4-u6-Ypz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1nq-Ng-hPD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="5P4-u6-Ypz" secondAttribute="trailing" id="DyE-Vp-Otn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5P4-u6-Ypz" secondAttribute="bottom" id="ayW-0U-auV"/>
+                                                    <constraint firstItem="5P4-u6-Ypz" firstAttribute="top" secondItem="Fpr-JD-eDk" secondAttribute="top" id="rKI-Rz-jfU"/>
+                                                    <constraint firstItem="5P4-u6-Ypz" firstAttribute="leading" secondItem="Fpr-JD-eDk" secondAttribute="leading" id="xcp-dT-P7b"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTr-L1-OX8">
+                                                <rect key="frame" x="120.66666666666666" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ld-zd-xFJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cp6-kF-MZe"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="2ld-zd-xFJ" firstAttribute="leading" secondItem="uTr-L1-OX8" secondAttribute="leading" id="8wI-GN-Ylx"/>
+                                                    <constraint firstItem="2ld-zd-xFJ" firstAttribute="top" secondItem="uTr-L1-OX8" secondAttribute="top" id="GxE-0W-yoi"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2ld-zd-xFJ" secondAttribute="bottom" id="MQC-dG-NXH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2ld-zd-xFJ" secondAttribute="trailing" id="xNU-Ek-Kgf"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caQ-mC-mWm">
+                                                <rect key="frame" x="241.33333333333329" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50J-9W-8S2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOe-GC-HEy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="50J-9W-8S2" secondAttribute="trailing" id="7m4-65-pYM"/>
+                                                    <constraint firstItem="50J-9W-8S2" firstAttribute="top" secondItem="caQ-mC-mWm" secondAttribute="top" id="O5E-sb-rXg"/>
+                                                    <constraint firstItem="50J-9W-8S2" firstAttribute="leading" secondItem="caQ-mC-mWm" secondAttribute="leading" id="rDm-uf-CXD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="50J-9W-8S2" secondAttribute="bottom" id="w4V-YV-aXL"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-JC-GLE">
+                                        <rect key="frame" x="0.0" y="120.66666666666666" width="361" height="119.66666666666666"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5t-Hc-PQD">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snb-lT-Arb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gLH-4M-vhJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="snb-lT-Arb" firstAttribute="top" secondItem="s5t-Hc-PQD" secondAttribute="top" id="7st-3j-DFc"/>
+                                                    <constraint firstItem="snb-lT-Arb" firstAttribute="leading" secondItem="s5t-Hc-PQD" secondAttribute="leading" id="Jgv-eD-FH3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="snb-lT-Arb" secondAttribute="trailing" id="U0C-8i-Lzf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="snb-lT-Arb" secondAttribute="bottom" id="qPi-No-J7W"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-uQ-3DZ">
+                                                <rect key="frame" x="120.66666666666666" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2Y-li-1cy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Zw-4H-44R"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="T2Y-li-1cy" secondAttribute="trailing" id="1NL-q9-mQw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="T2Y-li-1cy" secondAttribute="bottom" id="3RM-wg-xYf"/>
+                                                    <constraint firstItem="T2Y-li-1cy" firstAttribute="top" secondItem="Fnk-uQ-3DZ" secondAttribute="top" id="b1S-jL-JgF"/>
+                                                    <constraint firstItem="T2Y-li-1cy" firstAttribute="leading" secondItem="Fnk-uQ-3DZ" secondAttribute="leading" id="hhn-tQ-fUb"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OG4-Kx-ngo">
+                                                <rect key="frame" x="241.33333333333329" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4S2-nY-wft">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q9e-xw-rIb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="4S2-nY-wft" firstAttribute="leading" secondItem="OG4-Kx-ngo" secondAttribute="leading" id="PY9-kn-Ibi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4S2-nY-wft" secondAttribute="trailing" id="Pbx-5I-vuV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4S2-nY-wft" secondAttribute="bottom" id="UXp-mF-11E"/>
+                                                    <constraint firstItem="4S2-nY-wft" firstAttribute="top" secondItem="OG4-Kx-ngo" secondAttribute="top" id="kZ3-4A-gHR"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3sy-Pz-nah">
+                                        <rect key="frame" x="0.0" y="241.33333333333334" width="361" height="119.66666666666666"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ax-J6-6RC">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-MC-Gp9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmD-ZS-qev"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ucM-MC-Gp9" firstAttribute="leading" secondItem="2ax-J6-6RC" secondAttribute="leading" id="T1w-96-GpD"/>
+                                                    <constraint firstItem="ucM-MC-Gp9" firstAttribute="top" secondItem="2ax-J6-6RC" secondAttribute="top" id="c2V-Sd-rrK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ucM-MC-Gp9" secondAttribute="trailing" id="u0Y-E3-FVE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ucM-MC-Gp9" secondAttribute="bottom" id="zho-Bu-f3K"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlK-iW-8Qk">
+                                                <rect key="frame" x="120.66666666666666" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sK8-Lo-rM6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4BC-sX-gjH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="sK8-Lo-rM6" firstAttribute="leading" secondItem="FlK-iW-8Qk" secondAttribute="leading" id="ZOC-gm-sVV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sK8-Lo-rM6" secondAttribute="bottom" id="ak0-NE-ZMD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sK8-Lo-rM6" secondAttribute="trailing" id="lTI-Yn-C2e"/>
+                                                    <constraint firstItem="sK8-Lo-rM6" firstAttribute="top" secondItem="FlK-iW-8Qk" secondAttribute="top" id="s1U-Ng-t05"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHY-d7-z8u">
+                                                <rect key="frame" x="241.33333333333329" y="0.0" width="119.66666666666666" height="119.66666666666667"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxd-ac-XGq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="119.66666666666667"/>
+                                                        <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="32"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="Velour-Light" family="Velour" pointSize="64"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="gridSpaceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWk-FQ-BDt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="yxd-ac-XGq" firstAttribute="top" secondItem="OHY-d7-z8u" secondAttribute="top" id="Pgv-Rc-ZQf"/>
+                                                    <constraint firstItem="yxd-ac-XGq" firstAttribute="leading" secondItem="OHY-d7-z8u" secondAttribute="leading" id="b5h-Yb-GE8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yxd-ac-XGq" secondAttribute="trailing" id="kKF-RU-Zqw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yxd-ac-XGq" secondAttribute="bottom" id="pJU-ZW-TqN"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pf2-6l-BEJ" secondAttribute="height" multiplier="1:1" id="Maz-3t-mOQ"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0z1-Hp-EIn" userLabel="Footer">
+                                <rect key="frame" x="0.0" y="606.66666666666663" width="393" height="211.33333333333337"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ6-dV-UeP">
+                                        <rect key="frame" x="137.66666666666666" y="85.666666666666742" width="117.66666666666666" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eQ6-dV-UeP" secondAttribute="height" multiplier="50:17" id="fip-hn-R4f"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Clear Grid">
+                                            <fontDescription key="titleFontDescription" name="Velour-Light" family="Velour" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clearGridButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fAu-FB-ogI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="eQ6-dV-UeP" firstAttribute="width" secondItem="0z1-Hp-EIn" secondAttribute="width" multiplier="0.3" id="HdU-6u-7Sc"/>
+                                    <constraint firstItem="eQ6-dV-UeP" firstAttribute="centerY" secondItem="0z1-Hp-EIn" secondAttribute="centerY" id="QIY-sC-YTW"/>
+                                    <constraint firstItem="eQ6-dV-UeP" firstAttribute="centerX" secondItem="0z1-Hp-EIn" secondAttribute="centerX" id="not-CI-r7W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="52b-an-wPt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3na-l8-taH"/>
+                            <constraint firstItem="0z1-Hp-EIn" firstAttribute="top" secondItem="Pf2-6l-BEJ" secondAttribute="bottom" id="6lM-6b-jgT"/>
+                            <constraint firstItem="Pf2-6l-BEJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J78-Om-d4G"/>
+                            <constraint firstItem="0z1-Hp-EIn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KBC-eK-f2x"/>
+                            <constraint firstItem="Pf2-6l-BEJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.918575" id="W8A-6V-Xij"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0z1-Hp-EIn" secondAttribute="trailing" id="YvW-4e-cer"/>
+                            <constraint firstItem="0z1-Hp-EIn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n1p-Ja-DeD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="52b-an-wPt" secondAttribute="trailing" id="rbD-dm-WQE"/>
+                            <constraint firstItem="52b-an-wPt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sy9-Ht-srK"/>
+                            <constraint firstItem="Pf2-6l-BEJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v1B-oa-Kkd"/>
+                            <constraint firstItem="Pf2-6l-BEJ" firstAttribute="top" secondItem="52b-an-wPt" secondAttribute="bottom" id="wiM-is-foY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearGridButton" destination="eQ6-dV-UeP" id="3fL-Ta-VdY"/>
+                        <outlet property="subtitleLabel" destination="cia-N2-lGM" id="6YN-y4-23g"/>
+                        <outlet property="titleLabel" destination="ggT-eT-Dk6" id="6Bh-GX-eza"/>
+                        <outletCollection property="gridSpaceCollection" destination="5P4-u6-Ypz" collectionClass="NSMutableArray" id="Uas-fB-vnL"/>
+                        <outletCollection property="gridSpaceCollection" destination="2ld-zd-xFJ" collectionClass="NSMutableArray" id="YDV-2u-lFL"/>
+                        <outletCollection property="gridSpaceCollection" destination="50J-9W-8S2" collectionClass="NSMutableArray" id="ScS-0T-SNY"/>
+                        <outletCollection property="gridSpaceCollection" destination="snb-lT-Arb" collectionClass="NSMutableArray" id="nC3-oL-mUG"/>
+                        <outletCollection property="gridSpaceCollection" destination="T2Y-li-1cy" collectionClass="NSMutableArray" id="liE-jY-6Ek"/>
+                        <outletCollection property="gridSpaceCollection" destination="4S2-nY-wft" collectionClass="NSMutableArray" id="fWC-Hz-xhI"/>
+                        <outletCollection property="gridSpaceCollection" destination="ucM-MC-Gp9" collectionClass="NSMutableArray" id="mJT-Om-Pau"/>
+                        <outletCollection property="gridSpaceCollection" destination="sK8-Lo-rM6" collectionClass="NSMutableArray" id="HhY-1K-04G"/>
+                        <outletCollection property="gridSpaceCollection" destination="yxd-ac-XGq" collectionClass="NSMutableArray" id="u85-Oq-evK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
